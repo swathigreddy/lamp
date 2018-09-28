@@ -1,0 +1,25 @@
+---
+# tasks file for gui
+- name: install group
+  command: yum group list
+- name: install development tools
+  command: yum groups info "Development Tools"
+#- name: install tools
+ # command: yum group install "Development Tools"
+- name: mark
+  command: yum groups mark install "Development Tools"
+- name: install gnome desktop
+  command: yum groupinfo "Server with GUI"
+- name: install gnome
+  command: yum groupinfo "GNOME Desktop"
+- name: install desktop
+  command: yum groupinstall "GNOME Desktop" -y
+- name: systemctl
+  command: systemctl get-default
+- name: target
+  command: systemctl set-default graphical.target
+- name: ssyetmctl
+  command: systemctl get-default
+- name: isolate
+  command: systemctl isolate graphical.target
+

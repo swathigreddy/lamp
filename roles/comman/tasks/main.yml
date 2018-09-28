@@ -1,0 +1,15 @@
+---
+# tasks file for comman
+- name: install git
+  package: name=git state=present
+- name: install wget
+  package: name=wget state=present
+- name: download 
+  command: wget https://github.com/zaproxy/zaproxy/releases/download/2.7.0/ZAP_2_7_0_unix.sh creates=file
+- name: make my directory tree readable
+  file:
+    path: dir
+    mode: 0755
+    recurse: yes
+
+

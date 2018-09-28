@@ -1,0 +1,7 @@
+---
+# tasks file for gui
+- name: install the 'desktop tools'
+  package: name="@Devolopment tools" state=present
+- name: install the 'gnome desktop'
+  package: name="@^gnome-desktop-environment" state= present
+- 

@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+  tasks:
+    - name: yum install git
+      package: name=git state=present
+    - name: yum install wget
+      package: name=wget state=present
+    - name: download zap
+      git: repo=https://github.com/zaproxy/zaproxy/releases/download/2.7.0/ZAP_2_7_0_unix.sh 
+    - name: copy a file with mode,test1,bug here
+      copy: 
+       src: dumyfile
+       dest: /tmp/dummy1
+       mode: 755
+      
